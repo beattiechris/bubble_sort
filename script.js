@@ -11,10 +11,10 @@ audioCtx = new(
 )();
 
 const node = audioCtx.createGain();
-    node.gain.value = 0.1;
-    node.gain.linearRampToValueAtTime(
-        0, audioCtx.currentTime + duration
-    );
+node.gain.value = 0.1;
+node.gain.linearRampToValueAtTime(
+    0, audioCtx.currentTime + duration
+);
 
 function playNote(freq) {
    
