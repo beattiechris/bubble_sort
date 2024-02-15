@@ -1,8 +1,5 @@
 const n = 20;
 const array = [];
-
-init();
-
 let audioCtx = null;
 audioCtx = new(
     AudioContext ||
@@ -16,6 +13,11 @@ node.gain.linearRampToValueAtTime(
     0, audioCtx.currentTime + duration
 );
 
+
+
+
+init();
+
 function playNote(freq) {
    
     const duration = 0.1;
@@ -28,6 +30,21 @@ function playNote(freq) {
     node.connect(audioCtx.destination);
 }
 
+function mute(){
+    node.gain.value = 0;
+}
+
+function volumeDown(){
+    if(node.gain.value == 0) {
+
+    } else {
+        node.gain.value -= 0.1;
+    }
+}
+
+function volumeUp(){
+    node.gain.value += 0.1;
+}
 
 function init() {
     for(let i=0; i<n; i++) {
