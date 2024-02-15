@@ -19,3 +19,8 @@ body {
 .slidecontainer {
     display: flex;
 }
+
+.comparisonContainer {
+    display: flex;
+    flex-direction: row;
+}

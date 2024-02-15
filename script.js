@@ -87,14 +87,17 @@ function animate(moves) {
 
 function bubbleSort(array) {
     const moves = [];
-
+    
     do {
         var swapped = false;
         for(let i = 1; i < array.length; i++){
-            // moves.push({
-            //     indices:[i-1, i],
-            //     type:"comp"
-            //     });
+            
+            if(document.getElementById("comparisonCheck").checked == true){
+                moves.push({
+                    indices:[i-1, i],
+                    type:"comp"
+                    });
+            }
             if(array[i-1] > array[i]){
                 swapped = true;
                 moves.push({

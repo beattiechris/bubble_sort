@@ -13,7 +13,7 @@
     <hr>
 
     <div class="slidecontainer">
-        <input type="range" min="10" max="50" value="20" class="slider" id="myRange">
+        <input type="range" min="10" max="50" value="20" class="valueSlider" id="myRange">
         <p>Value: <span id="sliderValue">20</span></p>
     </div>
     <div>
@@ -21,7 +21,12 @@
         <button onclick="play()">play</button>
         <button onclick="mute()"><i class="fa fa-volume-off" aria-hidden="true"></i></button>    
         <button onclick="volumeDown()"><i class="fa fa-volume-down" aria-hidden="true"></i></i></button>       
-        <button onclick="volumeUp()"><i class="fa fa-volume-up" aria-hidden="true"></i></button>   
+        <button onclick="volumeUp()"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+    </div>
+    <div class="comparisonContainer">
+        <p>Show comparison</p>
+        <input type="checkbox" id="comparisonCheck">
+            
     </div>
 
 
