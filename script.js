@@ -1,4 +1,4 @@
-const n = 20;
+let n = 20;
 const array = [];
 let audioCtx = null;
 audioCtx = new(
@@ -7,6 +7,7 @@ audioCtx = new(
     window.webkitAudioContext
 )();
 
+const duration = 0.1;
 const node = audioCtx.createGain();
 node.gain.value = 0.1;
 node.gain.linearRampToValueAtTime(
@@ -14,13 +15,18 @@ node.gain.linearRampToValueAtTime(
 );
 
 
-
+var slider = document.getElementById("myRange");
+var sliderValue = document.getElementById("sliderValue");
+slider.oninput = function() {
+    n = this.value;
+    sliderValue.innerHTML = slider.value;
+  }
 
 init();
 
 function playNote(freq) {
    
-    const duration = 0.1;
+   
     const osc = audioCtx.createOscillator()
     osc.frequency.value = freq;
     osc.start();
